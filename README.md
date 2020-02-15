@@ -1,7 +1,3 @@
-# lweb
-
-> My terrific Nuxt.js project
-
 ## Build Setup
 
 ``` bash
