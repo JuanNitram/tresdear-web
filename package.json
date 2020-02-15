@@ -1,0 +1,41 @@
+{
+  "name": "lweb",
+  "version": "1.0.0",
+  "author": "SideralDev",
+  "baseUrl": "http://tresdear.com",
+  "title": "Tresdear",
+  "description": "Somos Tresdear, especialistas en recorridos virtuales, fotos 360, planos de planta y más. En tresdear creamos experiencias inmersivas en 3D, con recorridos virtuales de alta calidad.",
+  "keywords": "recorridos virtuales, entorno digital, realidad virtual, dollhose, 3D, google street view, street view, planos de planta, planos, fotos, fotografía, visita virtual",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-brands-svg-icons": "^5.9.0",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
+    "@nuxtjs/axios": "^5.5.4",
+    "@nuxtjs/recaptcha": "^0.5.3",
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.0.0-rc.27",
+    "cross-env": "^5.2.0",
+    "flickity-imagesloaded": "^2.0.0",
+    "nuxt": "^2.8.1",
+    "nuxt-fontawesome": "^0.4.0",
+    "packery": "^2.1.2",
+    "quill-delta-to-html": "^0.10.13",
+    "spinkit": "^1.2.5",
+    "vee-validate": "^2.2.13",
+    "vue-flickity": "^1.1.2",
+    "vue-scrollto": "^2.15.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1",
+    "sass-loader": "^7.1.0"
+  }
+}

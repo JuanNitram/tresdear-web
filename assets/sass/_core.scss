@@ -1,0 +1,265 @@
+// BOOTSTRAP-VUE
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+//-----------------------------------------------------------------------------//
+
+//VARIABLES
+@import './_variables.scss';
+
+//COMPONENTS
+@import './components/header/navbar.scss';
+@import './components/cover/_core.scss';
+@import './components/aboutUs/_core.scss';
+@import './components/services/_core.scss';
+@import './components/plans/_core.scss';
+@import './components/featured/_core.scss';
+@import './components/projects/_core.scss';
+@import './components/clients/_core.scss';
+// @import './components/newsletter/_core.scss';
+@import './components/contact/_core.scss';
+
+@import './components/partials/_core.scss';
+
+@import './components/footer/_core.scss';
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .236s
+}
+.page-enter, .page-leave-active {
+  opacity: 0
+}
+
+.main-page-container {
+    min-height: calc(100vh - 85px);
+    width: 100%;
+    // top: 85px;
+    position: relative;
+    padding-bottom: 85px;
+
+    @media screen and(max-width: 1200px) {
+        min-height: calc(100vh - 76px);
+        // top: 76px;
+        padding-bottom: 76px;
+    }
+}
+
+p {
+    color: lighten($black, 20%);
+}
+
+h1 {
+    font-family: $font;
+    font-weight: 600;
+    font-size: 2.5rem;
+
+    @media screen and(max-width: 768px) {
+        font-size: 2rem;
+    }
+
+    @media screen and(max-width: 576px) {
+        font-size: 1.8rem;
+    }
+}
+
+//section subTitle
+
+.section-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 0px;
+
+    @media screen and(max-width: 992px) {
+        margin: 30px 0px;
+    }
+
+    @media screen and(max-width: 768px) {
+        margin: 0px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        font-family: $font;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 0px;
+
+        @media screen and(max-width: 992px) {
+            font-size: 2rem;
+        }
+
+        @media screen and(max-width: 768px) {
+            font-size: 1.8rem;
+        }
+
+        @media screen and(max-width: 576px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    .guard {
+        // position: relative;
+        // width: 35px;
+        // height: 50px;
+        // transform: rotate(180deg);
+        // margin: 0px 0px 30px 0px;
+        //
+        // @media screen and(max-width: 992px) {
+        //     width: 18px;
+        //     height: 27px;
+        // }
+
+        img {
+            position: relative;
+            height: 40px;
+            width: auto;
+
+            @media screen and(max-width: 768px) {
+                height: 25px;
+                margin-bottom: 20px;
+
+            }
+
+            &::before {
+                content: '';
+                width: 30vw;
+                height: 2px;
+                display: inline-block;
+                background: lighten($black, 60%);
+                position: absolute;
+                top: 35%;
+                left: 15px;
+            }
+
+            &::after {
+                content: '';
+                width: 30vw;
+                height: 2px;
+                display: inline-block;
+                background: lighten($black, 60%);
+                position: absolute;
+                top: 35%;
+                right: 15px;
+            }
+        }
+
+
+        .main-triangle {
+            width: 0;
+            height: 0;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-bottom: 33px solid $orange;
+            position: absolute;
+            z-index: 7;
+
+            @media screen and(max-width: 992px) {
+                border-left: 9px solid transparent;
+                border-right: 9px solid transparent;
+                border-bottom: 18px solid $orange;
+            }
+
+            // @media screen and(max-width: 992px) {
+            //     font-size: 1.8rem;
+            // }
+        }
+
+        .small-triangle {
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 24px solid $white;
+            position: absolute;
+            right: 5px;
+            top: 6px;
+            z-index: 8;
+
+            @media screen and(max-width: 992px) {
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-bottom: 12px solid $white;
+                right: 3px;
+                top: 4px;
+            }
+        }
+    }
+
+    //TRIANGLES
+    // .guard {
+    //     position: relative;
+    //     width: 35px;
+    //     height: 50px;
+    //     transform: rotate(180deg);
+    //     margin: 0px 0px 30px 0px;
+    //
+    //     @media screen and(max-width: 992px) {
+    //         width: 18px;
+    //         height: 27px;
+    //     }
+    //
+    //     &::before {
+    //         content: '';
+    //         width: 30vw;
+    //         height: 2px;
+    //         display: inline-block;
+    //         background: lighten($black, 60%);
+    //         position: absolute;
+    //         top: 35%;
+    //         left: 15px;
+    //     }
+    //
+    //     &::after {
+    //         content: '';
+    //         width: 30vw;
+    //         height: 2px;
+    //         display: inline-block;
+    //         background: lighten($black, 60%);
+    //         position: absolute;
+    //         top: 35%;
+    //         right: 15px;
+    //     }
+    //
+    //     .main-triangle {
+    //         width: 0;
+    //         height: 0;
+    //         border-left: 18px solid transparent;
+    //         border-right: 18px solid transparent;
+    //         border-bottom: 33px solid $orange;
+    //         position: absolute;
+    //         z-index: 7;
+    //
+    //         @media screen and(max-width: 992px) {
+    //             border-left: 9px solid transparent;
+    //             border-right: 9px solid transparent;
+    //             border-bottom: 18px solid $orange;
+    //         }
+    //
+    //         // @media screen and(max-width: 992px) {
+    //         //     font-size: 1.8rem;
+    //         // }
+    //     }
+    //
+    //     .small-triangle {
+    //         width: 0;
+    //         height: 0;
+    //         border-left: 12px solid transparent;
+    //         border-right: 12px solid transparent;
+    //         border-bottom: 24px solid $white;
+    //         position: absolute;
+    //         right: 5px;
+    //         top: 6px;
+    //         z-index: 8;
+    //
+    //         @media screen and(max-width: 992px) {
+    //             border-left: 6px solid transparent;
+    //             border-right: 6px solid transparent;
+    //             border-bottom: 12px solid $white;
+    //             right: 3px;
+    //             top: 4px;
+    //         }
+    //     }
+    // }
+}

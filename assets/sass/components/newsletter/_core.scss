@@ -1,0 +1,56 @@
+#newsletter {
+    background-image: url('/img/newsletter.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 400px;
+    position: relative;
+
+
+    .overlay-content {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(darken($gray, 100%), .8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .section-title {
+            h2 {
+                color: $white;
+            }
+        }
+
+        form {
+            input {
+                height: 50px;
+                background: none;
+                border-right-color: $orange;
+            }
+
+            .input-group-append {
+
+                button {
+                    background: none;
+                    border: 1px solid;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 120px;
+                    background-color: $orange;
+                    color: $white;
+                    font-family: $font;
+                    font-weight: 600;
+                    border-color: $orange;
+                    border-top-left-radius: 0px;
+                    border-bottom-left-radius: 0px;
+                    cursor: pointer;
+                    box-shadow: none;
+                    outline: none;
+                }
+
+            }
+        }
+    }
+}

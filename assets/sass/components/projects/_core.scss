@@ -1,0 +1,156 @@
+@import "./_file";
+#projects {
+    background: rgba($blue, .04);
+
+    .section-title {
+        // margin-bottom: 0px;
+    }
+
+    .projects-filter-ls {
+        margin: 15px 0px;
+
+        ul {
+            padding-left: 0px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            li {
+                list-style: none;
+                margin: 15px;
+
+                &:first-of-type {
+                    margin-left: 0px;
+                }
+
+                &:last-of-type {
+                    margin-right: 0px;
+                }
+
+                a {
+                    font-family: $font;
+                    font-weight: 600;
+                    color: $blue;
+
+                }
+            }
+        }
+    }
+
+    .projects-ls {
+        height: auto;
+        width: 100%;
+
+        &.un_flickity {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .project-item {
+            position: relative;
+            height: auto;
+            width: calc(100% / 4);
+
+            @media screen and(max-width: 1200px) {
+                width: calc(100% / 3);
+                min-width: 300px;
+            }
+
+            @media screen and(max-width: 1080px) {
+                min-width: 250px;
+            }
+
+            @media screen and(max-width: 767px) {
+                width: 100%;
+                margin-bottom: 0px;
+            }
+
+            @media screen and(max-width: 576px) {
+                width: 100%;
+                // margin-bottom: 20px;
+
+                // &:last-of-type {
+                //     margin-bottom: 0px;
+                // }
+            }
+
+            .img-box {
+                height: auto;
+                width: 100%;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .overlay-content-box {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background-color: rgba(darken($gray, 100%), .6);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: all ease-in-out .236s;
+
+                @media screen and(max-width: 768px) {
+                    background-color: rgba($blue, .50);
+                    opacity: 1;
+                    transition: all ease-in-out .236s;
+                }
+
+                h3 {
+                    font-family: $font;
+                    text-align: center;
+                    color: $white;
+
+                    @media screen and(max-width: 1200px) {
+                        font-size: 1.5rem;
+                    }
+
+                    @media screen and(max-width: 767px) {
+                        font-size: 1.4rem;
+                    }
+                }
+
+                p {
+                    text-align: center;
+                    color: lighten($gray, 40%);
+                    margin-bottom: 0px;
+
+                    @media screen and(max-width: 992px) {
+                        display: none;
+                    }
+                }
+            }
+
+            &:hover {
+                .overlay-content-box {
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    background-color: rgba($blue, .96);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 1;
+                    transition: all ease-in-out .236s;
+
+                    @media screen and(max-width: 768px) {
+                        background-color: rgba($blue, .50);
+                        opacity: 1;
+                        transition: all ease-in-out .236s;
+                    }
+                }
+            }
+
+        }
+    }
+}

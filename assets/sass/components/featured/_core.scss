@@ -1,0 +1,117 @@
+#featured {
+    height: auto;
+    background-color: gray;
+
+    .separator {
+        width: 100%;
+        // height: 250px;
+        // background-image: url('/img/separator.jpg');
+        // background-attachment: fixed;
+        // background-position: center;
+        // background-repeat: no-repeat;
+
+        // @media screen and(max-width: 768px) {
+        //     height: 150px;
+        // }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .featured-ls {
+        width: 100%;
+
+        &.un_flickity {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .featured-item {
+            position: relative;
+            height: 100%;
+            height: 400px;
+            width: calc(100% / 3);
+            min-width: 400px;
+            background: $blue;
+
+            @media screen and(max-width: 1200px) {
+                width: calc(100% / 2);
+                min-width: 400px;
+            }
+
+            @media screen and(max-width: 992px) {
+                width: calc(100% / 2);
+                min-width: auto;
+            }
+
+            @media screen and(max-width: 767px) {
+                width: 100%;
+                min-width: 100%;
+                height: 350px;
+            }
+
+            .img-box {
+                height: 100%;
+                width: 100%;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .overlay-content-box {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background-color: rgba(darken($gray, 100%), .6);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                h3 {
+                    font-family: $font;
+                    text-align: center;
+                    color: $white;
+
+                    @media screen and(max-width: 767px) {
+                        font-size: 1.4rem;
+                    }
+
+                }
+
+                p {
+                    text-align: center;
+                    color: lighten($gray, 40%);
+
+                }
+            }
+
+            a.featured-item-btn {
+                width: 200px;
+                height: 45px;
+                padding: 15px 30px;
+                margin: 0px 15px;
+                background-color: $orange;
+                color: $white;
+                font-family: $font;
+                font-size: 1.2rem;
+                font-weight: 400;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &.featured-item-call2action {
+
+            }
+        }
+    }
+
+}

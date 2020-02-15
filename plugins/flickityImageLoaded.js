@@ -1,0 +1,1 @@
+Flickity = require('flickity-imagesloaded');

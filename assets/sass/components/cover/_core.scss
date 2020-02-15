@@ -1,0 +1,264 @@
+#cover {
+    width: 100%;
+    height: fit-content;
+    min-height: 100%;
+    position: relative;
+
+    .spinner {
+        position: absolute;
+        background: rgba(255, 255, 255, 1);
+        width: 100%;
+        height: calc(100vh - 86px);
+        z-index: 9;
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+
+        @media screen and(max-width: 992px) {
+            height: calc(100vh - 76px);
+        }
+    }
+
+    &.is-loaded {
+        .spinner {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s 1s, opacity 1s ease-in-out;
+        }
+
+        .flickity-enabled {
+            display: block;
+            opacity: 1;
+            transition: opacity ease-in-out .236s;
+        }
+    }
+
+    .flickity-enabled {
+        position: relative;
+        height: 100%;
+        opacity: 0;
+        transition: opacity ease-in-out .236s;
+
+
+        .flickity-viewport {
+            height: 100%;
+            position: relative;
+
+            .flickity-slider {
+                height: 100%;
+                width: 100%;
+                // position: absolute;
+
+                .carousel-cell {
+                    height: auto;
+                    width: 100%;
+                    // min-height: 100%;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        max-height: 100%;
+                        margin: 0 auto;
+                        max-width: 100%;
+                    }
+
+                    .overlay {
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        top: 0;
+                        background: rgba(black, .5);
+
+                        .overlay-content-box {
+                            width: fit-content;
+                            height: auto;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+
+                            .txt-box {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                margin-bottom: 40px;
+
+                                @media screen and(max-width: 768px) {
+                                    margin-bottom: 20px;
+                                }
+
+                                @media screen and(max-width: 468px) {
+                                    margin-bottom: 0px;
+                                }
+
+                                h2 {
+                                    color: $orange;
+                                    font-size: 2.5rem;
+                                    text-transform: uppercase;
+                                    font-family: $font;
+                                    font-weight: 400;
+
+                                    @media screen and(max-width: 992px) {
+                                        font-size: 2rem;
+                                    }
+
+                                    @media screen and(max-width: 768px) {
+                                        font-size: 1.8rem;
+                                    }
+
+                                    @media screen and(max-width: 576px) {
+                                        font-size: 1.2rem;
+                                    }
+                                }
+
+                                h1 {
+                                    color: $white;
+                                    font-size: 5rem;
+                                    text-transform: uppercase;
+                                    font-family: $font;
+                                    font-weight: 600;
+
+                                    @media screen and(max-width: 1366px) {
+                                        font-size: 4.5rem;
+                                    }
+
+                                    @media screen and(max-width: 1200px) {
+                                        font-size: 4rem;
+                                    }
+
+                                    @media screen and(max-width: 992px) {
+                                        font-size: 3.5rem;
+                                    }
+
+                                    @media screen and(max-width: 768px) {
+                                        font-size: 3rem;
+                                    }
+
+                                    @media screen and(max-width: 576px) {
+                                        font-size: 1.4rem;
+                                    }
+                                }
+                            }
+
+                            .call2action-box {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: center;
+
+                                @media screen and(max-width: 468px) {
+                                    display: none;
+                                }
+
+                                a.call2action {
+                                    width: 200px;
+                                    height: 45px;
+                                    padding: 15px 30px;
+                                    margin: 0px 15px;
+                                    background-color: $orange;
+                                    color: $white;
+                                    font-family: $font;
+                                    font-size: 1.2rem;
+                                    font-weight: 400;
+                                    text-decoration: none;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    @media screen and(max-width: 768px) {
+                                        width: 150px;
+                                        height: 40px;
+                                        font-size: .9rem;
+                                    }
+
+                                    @media screen and(max-width: 576px) {
+                                        width: 120px;
+                                        height: 30px;
+                                        font-size: .8rem;
+                                        padding: 15px 30px;
+                                    }
+
+                                    &.btn-white {
+                                        background-color: $white;
+                                        color: $orange;
+                                    }
+                                }
+                            }
+
+
+
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+
+        .flickity-page-dots {
+            bottom: 40px;
+
+            @media screen and(max-width: 992px) {
+                bottom: 35px;
+            }
+
+            @media screen and(max-width: 992px) {
+                bottom: 30px;
+            }
+
+            @media screen and(max-width: 767px) {
+                bottom: 25px;
+            }
+
+            @media screen and(max-width: 576px) {
+                bottom: 20px;
+            }
+
+
+
+
+            .dot {
+                height: 8px;
+                width: 40px;
+                margin: 0;
+                border-radius: 0;
+                background: $white;
+
+                @media screen and(max-width: 992px) {
+                    height: 6px;
+                    width: 30px;
+                }
+
+                @media screen and(max-width: 992px) {
+                    height: 6px;
+                    width: 30px;
+                }
+
+                @media screen and(max-width: 767px) {
+                    height: 5px;
+                    width: 25px;
+                }
+
+
+
+                &.is-selected {
+                    background: $white;
+                }
+            }
+        }
+
+        .flickity-prev-next-button {
+            @media screen and(max-width: 468px) {
+                display: none;
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,142 @@
+.project-file {
+    .project-info-header {
+        width: 100%;
+        padding: 10px 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid lighten($gray, 60%);
+
+        h2 {
+            @media screen and(max-width: 992px) {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .share-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and(max-width: 768px) {
+            justify-content: flex-end;
+        }
+
+        @media screen and(max-width: 576px) {
+            justify-content: space-between;
+        }
+
+        span {
+            display: block;
+            margin-right: 20px;
+            font-family: $font;
+            font-size: 1rem;
+            color: lighten($gray, 42%);
+        }
+
+        .social-media-box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            li {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                margin: 0px 5px;
+                width: 2.5rem;
+                height: 2.5rem;
+
+                &:last-of-type {
+                    margin: 0px;
+                }
+
+                a {
+
+                    svg {
+                        width: 2rem;
+                        height: 2rem;
+                        color: $blue;
+                        transition: all ease-in-out .236s;
+                    }
+
+                    &:hover {
+                        svg {
+                            width: 2.5rem;
+                            height: 2.5rem;
+                            transition: all ease-in-out .236s;
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    .consult-btn {
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px;
+            border: 1px solid $blue;
+            padding: 10px 20px;
+            color: $blue;
+            font-family: $font;
+            text-decoration: none;
+            transition: all ease-in-out .236s;
+
+            @media screen and(max-width: 576px) {
+                width: 100%;
+                background: $blue;
+                color: $white;
+            }
+
+            &:hover {
+                background: $blue;
+                color: $white;
+                transition: all ease-in-out .236s;
+            }
+        }
+    }
+
+    .iframe-box {
+        height: 600px;
+        width: 100%;
+        position: relative;
+        padding-bottom: 56.25%; /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
+        overflow: hidden;
+
+        @media screen and (max-width: 768px) {
+            height: 450px;
+        }
+
+        @media screen and (max-width: 576px) {
+            height: 400px;
+        }
+
+        @media screen and (max-width: 320px) {
+            height: 350px;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    // .banner {
+    //     width: 100%;
+    //     height: 250px;
+    //     background-image: url('.');
+    //
+    // }
+}
