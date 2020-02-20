@@ -166,7 +166,6 @@ export default {
         }
     },
     env: {
-      API_URL: 'http://api.tresdear.com/api/page/',
-      // API_URL: 'http://localhost:8000/api/page/'
+      API_URL: 'http://api.tresdear.es/api/page/',
     }
 }
