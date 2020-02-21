@@ -19,7 +19,7 @@
                             <b-col>
                                 <div class="about-us-container">
                                     <div class="img-box">
-                                        <img src="~/static/img/about-us/about-us.jpg" alt="">
+                                        <img src="~/static/img/about-us/about-us.png" alt="">
                                     </div>
                                     <div class="content-box">
                                         <h2>¿Qué hacemos?</h2>

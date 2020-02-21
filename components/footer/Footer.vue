@@ -20,18 +20,9 @@
             </b-navbar-nav>
         </div>
         <div class="credits pl-3 pr-3 pl-sm-4 pr-sm-4 pl-md-5 pr-md-5 pl-lg-5 pr-lg-5 pl-xl-5 pr-xl-5">
-                <div class="credits-txt">
-                    <span>Tresdear © 2019 - Todos los derechos reservados</span>
-                </div>
-                <div class="sideral-branding">
-                    <span>
-                        Desarrollado por
-                    </span>
-                    <a href="https://sideraldev.com">
-                        <img src="~/static/img/sideral/sideral-logo.png" alt="">
-                    </a>
-                </div>
-            </ul>
+              <div class="credits-txt">
+                  <span>Tresdear © 2019 - Todos los derechos reservados</span>
+              </div>
         </div>
     </footer>
 </template>
