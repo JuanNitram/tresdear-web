@@ -150,7 +150,7 @@ export default {
     recaptcha: {
         hideBadge: true, // Hide badge element (v3)
         language: "es",   // Recaptcha language (v2)
-        siteKey: "6LfG06wUAAAAAKGZ_2BTeiR56Bs9eRrUz5ojFDvC",    // Site key for requests
+        siteKey: "6Le-39oUAAAAAD-5B-SNkhnjcreW6svs9aKqYp9M",    // Site key for requests
         version: 3     // Version
     },
 
