@@ -2,7 +2,7 @@
     <div id="cover">
         <Preloader :size="20" :color="'#e4b013'"></Preloader>
         <transition name="fade">
-          <div id="flickity-slider" style="min-height: 80vh">
+          <div id="flickity-slider" class="hidden" style="min-height: 80vh">
             <CoverItem
               v-for="(slider, i) in sliders"
               :key="slider.id"
@@ -34,6 +34,7 @@
             flickityCarousel: undefined,
             backgroundUrl,
             scrollY: 0,
+            flickityReady: false
           }
       },
 
@@ -47,13 +48,14 @@
           await this.$store.dispatch('fetch', 'sliders');
         }
 
-          this.$store.commit('IMAGES_LOADING');
+        this.$store.commit('IMAGES_LOADING');
+        setTimeout(() => {
           imagesLoaded( '#flickity-slider', () => {
             this.$store.commit('IMAGES_LOADED');
-            setTimeout(() => {
-              this.initFlickity();
-            }, 10)
+            this.initFlickity();
           });
+        }, 3000);
+
 
       },
 
@@ -67,7 +69,9 @@
             pageDots: false,
             on: {
               ready: function() {
-                this.resize()
+                this.resize();
+                document.getElementById('flickity-slider').classList.remove('hidden');
+                document.getElementById('flickity-slider').classList.add('fade-in');
               }
             }
           });
