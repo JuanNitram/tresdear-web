@@ -12,7 +12,7 @@
 
 <script>
 import Cover from "~/components/cover/Cover";
-
+import { mapGetters } from 'vuex';
 
 export default {
     components: {
@@ -24,16 +24,10 @@ export default {
         mainPlans: () => import('../components/plans/mainPlans'),
         // mainClients: () => import('../components/clients/mainClients'),
     },
-    data() {
-        return {
-            // isLoaded: false
-            // isMobile: false,
-        }
-    },
-    mounted() {
-        // // this.OnisLoaded()
-        // this.isLoaded = this.$on('isLoaded')
-        // console.log('OAAAAAAAA', this.isLoaded);
+    computed: {
+      ...mapGetters([
+        'loading'
+      ])
     }
 }
 </script>

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+import Vue from 'vue';
 
 export const state = () => {
   return {
@@ -63,81 +65,76 @@ export const state = () => {
           active: true
       },
   ],
-  featureds: [
-      // {
-      //     id: 1,
-      //     title: 'Auditorio de Barcelona',
-      //     description: 'El Auditorio de Barcelona es un edificio moderno de 42 000 m² diseñado por el arquitecto Rafael Moneo que fue inaugurado el 22 de marzo de 1999.',
-      //     imageLink: 'img/featureds/auditorio-de-barcelona.jpg',
-      //     active: true,
-      // },
-      // {
-      //     id: 2,
-      //     title: 'Hotel Eurostars Grand Marina',
-      //     description: 'Ubicado en un edificio emblemático con forma de trasatlántico, este hotel de alto nivel en primera línea de mar se encuentra junto al World Trade Center.',
-      //     imageLink: 'img/featureds/reservar-hotel-eurostars-grand-marina.jpg',
-      //     active: true,
-      // },
-      // {
-      //     id: 3,
-      //     title: 'Auditorio de Barcelona',
-      //     description: 'El Auditorio de Barcelona es un edificio moderno de 42 000 m² diseñado por el arquitecto Rafael Moneo que fue inaugurado el 22 de marzo de 1999.',
-      //     imageLink: 'img/featureds/auditorio-de-barcelona.jpg',
-      //     active: true,
-      // },
-      // {
-      //     id: 4,
-      //     title: 'Auditorio de Barcelona',
-      //     description: 'El Auditorio de Barcelona es un edificio moderno de 42 000 m² diseñado por el arquitecto Rafael Moneo que fue inaugurado el 22 de marzo de 1999.',
-      //     imageLink: 'img/featureds/auditorio-de-barcelona.jpg',
-      //     active: true,
-      // },
-      // {
-      //     id: 5,
-      //     title: 'Auditorio de Barcelona',
-      //     description: 'El Auditorio de Barcelona es un edificio moderno de 42 000 m² diseñado por el arquitecto Rafael Moneo que fue inaugurado el 22 de marzo de 1999.',
-      //     imageLink: 'img/featureds/auditorio-de-barcelona.jpg',
-      //     active: true,
-      // },
-      // {
-      //     id: 6,
-      //     title: 'Auditorio de Barcelona',
-      //     description: 'El Auditorio de Barcelona es un edificio moderno de 42 000 m² diseñado por el arquitecto Rafael Moneo que fue inaugurado el 22 de marzo de 1999.',
-      //     imageLink: 'img/featureds/auditorio-de-barcelona.jpg',
-      //     active: true,
-      // },
-
-  ],
+    featureds: [],
+    loading: {}
   }
 }
 
 export const mutations = {
-  FETCH_PROJECTS(state, data){
-    state.projects = data
+  PROJECTS_REQUEST (state, section) {
+    Vue.set(state.loading, section, true);
   },
-  FETCH_PRICES(state, data){
-    state.plans = data
+  PRICES_REQUEST(state, section) {
+    Vue.set(state.loading, section, true);
   },
-  FETCH_SLIDERS(state, data){
-    state.sliders = data
+  SLIDERS_REQUEST(state, section) {
+    Vue.set(state.loading, section, true);
   },
-  FETCH_CLIENTS(state, data){
-    state.clients = data
+  CLIENTS_REQUEST(state, section) {
+    Vue.set(state.loading, section, true);
+  },
+
+  PROJECTS_SUCCESS(state, payload){
+    state.projects = payload.data;
+    Vue.set(state.loading, payload.section, false);
+  },
+  PRICES_SUCCESS(state, payload){
+    state.plans = payload.data;
+    Vue.set(state.loading, payload.section, false);
+  },
+  SLIDERS_SUCCESS(state, payload){
+    state.sliders = payload.data;
+    Vue.set(state.loading, payload.section, false);
+  },
+  CLIENTS_SUCCESS(state, payload){
+    state.clients = payload.data;
+    Vue.set(state.loading, payload.section, false);
+  },
+
+  PROJECTS_FAILURE (state, section) {
+    Vue.set(state.loading, section, false);
+  },
+  PRICES_FAILURE(state, section) {
+    Vue.set(state.loading, section, false);
+  },
+  SLIDERS_FAILURE(state, section) {
+    Vue.set(state.loading, section, false);
+  },
+  CLIENTS_FAILURE(state, section) {
+    Vue.set(state.loading, section, false);
+  },
+
+  IMAGES_LOADING(state) {
+    Vue.set(state.loading, 'IMAGES', true);
+  },
+  IMAGES_LOADED(state) {
+    Vue.set(state.loading, 'IMAGES', false);
   }
-}
+};
 
 export const actions = {
-  fetch({commit}, section){
-    return new Promise((resolve, reject) => {
-      this.$axios.get(process.env.API_URL + section).then(res => {
-        let data = [];
-        if(res.data.data){
-          data = res.data.data[section];
-        }
-        commit('FETCH_' + (section.toUpperCase()), data)
-        resolve()
-      });
-    })
+  async fetch({commit}, section){
+    commit(`${section.toUpperCase()}_REQUEST`, section.toUpperCase());
+    try {
+      let { data } = await this.$axios.get(process.env.API_URL + section);
+      if(data.data){
+        data = data.data[section];
+      }
+      commit(`${section.toUpperCase()}_SUCCESS`, {data, section: section.toUpperCase()})
+    } catch (err) {
+      commit(`${section.toUpperCase()}_FAILURE`, section.toUpperCase());
+      console.log(err);
+    }
   }
 }
 
@@ -148,4 +145,5 @@ export const getters = {
   featureds: state => state.featureds,
   plans: state => state.plans,
   services: state => state.services,
+  loading: state => _.invert(state.loading)[true] !== undefined
 }

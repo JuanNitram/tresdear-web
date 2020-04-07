@@ -1,7 +1,8 @@
 <template >
     <div v-if="portada.active && imageUrl" class="carousel-cell">
-        <img  :src="imageUrl" />
-        <!-- <img :src="imageUrl" alt=""> -->
+        <div class='image'
+             :style='"background-image: url("+ imageUrl +")"'>
+        </div>
         <div class="overlay">
             <div class="overlay-content-box">
                 <div class="txt-box">
@@ -27,9 +28,15 @@ export default {
       imageUrl(){
         return this.portada.medias.medias.large[0].full_url
       }
-  },
-  mounted() {
-      console.log(this.portada.medias.medias);
   }
 }
 </script>
+
+<style>
+  .image {
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    height: 90vh;
+  }
+</style>

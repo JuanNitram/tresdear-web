@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="root">
         <!-- <LoadingProgressBar></LoadingProgressBar> -->
         <Navbar></Navbar>
         <nuxt />
@@ -8,22 +8,13 @@
 </template>
 
 <script>
-    // import LoadingProgressBar from '~/components/partials/LoadingProgressBar';
     import Navbar from '~/components/nav/Navbar';
+    import Footer from "../components/footer/Footer";
 
     export default {
       components: {
-            // LoadingProgressBar,
             Navbar,
-            Footer: () => import('../components/footer/Footer'),
+            Footer
         },
-        // mounted () {
-        //     this.$nextTick(() => {
-        //       this.$nuxt.$loading.start()
-        //
-        //       setTimeout(() => this.$nuxt.$loading.finish(), 200)
-        //     })
-        // },
-
     }
 </script>

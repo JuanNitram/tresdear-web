@@ -1,84 +1,92 @@
 <template>
     <div id="cover">
+        <Preloader :size="20" :color="'#e4b013'"></Preloader>
         <transition name="fade">
-            <Preloader  :color="'#e4b013'" :size='40'>
-            </Preloader>
+          <div id="flickity-slider" style="min-height: 80vh">
+            <CoverItem
+              v-for="(slider, i) in sliders"
+              :key="slider.id"
+              v-bind:portada="slider"
+            >
+            </CoverItem>
+          </div>
         </transition>
-        <no-ssr>
-            <flickity v-if="sliders.length" ref="flickity_cover" :options="cover_flickityOptions">
-                <CoverItem
-                    v-for="(slider, i) in sliders"
-                    :key="slider.id"
-                    v-bind:portada="slider"
-                    >
-                </CoverItem>
-            </flickity>
-        </no-ssr>
+
+      <div class="scroll-down cursor-pointer" :class="{'d-none': scrollY > 0}"></div>
     </div>
 </template>
 
 <script>
     import CoverItem from '~/components/cover/CoverItem';
     import Preloader from '~/components/partials/preloader';
-    import { mapState } from 'vuex';
+    import imagesLoaded from "imagesloaded";
+
+    import backgroundUrl from '~/assets/img/cover/about-us.png'
 
     export default {
-        components: {
-          CoverItem,
-          Preloader
-        },
-        computed: {
-          sliders(){
-            return this.$store.getters.sliders
+      components: {
+        CoverItem,
+        Preloader
+      },
+
+      data() {
+          return {
+            flickityCarousel: undefined,
+            backgroundUrl,
+            scrollY: 0,
           }
-        },
-        data() {
-            return {
-                window: {
-                    width: 0,
-                },
-                cover_flickityOptions: {
-                    draggable: true,
-                    prevNextButtons: true,
-                    pageDots: true,
-                    wrapAround: true,
-                    cellSelector: '.carousel-cell',
-                    contain: true,
-                    cellAlign: 'center',
-                    adaptiveHeight: true,
-                    // lazyLoad: true,
-                    imagesLoaded: true,
-                    setGallerySize: true,
-                    autoPlay:6000,
-                    on: {
-                        ready: function() {
-                            setTimeout(()=>{
-                                document.getElementById('cover').classList.add('is-loaded');
-                            }, 500);
-                            this.resize();
-                        }
-                    }
-                },
+      },
+
+      async mounted(){
+        var _self = this;
+        window.addEventListener("scroll", function (event) {
+          _self.scrollY = this.scrollY;
+        });
+
+        if(this.sliders.length == 0){
+          await this.$store.dispatch('fetch', 'sliders');
+        }
+
+          this.$store.commit('IMAGES_LOADING');
+          imagesLoaded( '#flickity-slider', () => {
+            this.$store.commit('IMAGES_LOADED');
+            setTimeout(() => {
+              this.initFlickity();
+            }, 10)
+          });
+
+      },
+
+      methods: {
+        initFlickity() {
+          this.flickityCarousel = new Flickity('#flickity-slider', {
+            wrapAround: true,
+            autoPlay: true,
+            pauseAutoPlayOnHover: true,
+            fade: true,
+            pageDots: false,
+            on: {
+              ready: function() {
+                this.resize()
+              }
             }
-        },
-        created(){
-          if(this.sliders.length == 0){
-            this.isLoading = true
-            this.$store.dispatch('fetch', 'sliders').then((res) => {
+          });
+        }
+      },
 
-            });
-          }
-        },
-        methods: {
-          next() {
-              this.$refs.flickity_cover.next();
-          },
-          previous() {
-              this.$refs.flickity_cover.previous();
-          },
-        },
+      computed: {
+        sliders(){
+          return this.$store.getters.sliders
+        }
+      },
     }
-
-
-
 </script>
+
+<style>
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .9s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+</style>

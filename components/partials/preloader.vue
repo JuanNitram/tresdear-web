@@ -1,5 +1,5 @@
 <template>
-    <div :style="styles" class="spinner">
+    <div v-show="loading" :style="styles" class="spinner">
         <div class="bounce1"></div>
         <div class="bounce2"></div>
         <div class="bounce3"></div>
@@ -7,12 +7,17 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
+
     export default {
         props: {
             size: Number,
             color: String,
         },
         computed: {
+            ...mapGetters([
+              'loading'
+            ]),
             styles () {
                 return {
                     '--color': this.color,

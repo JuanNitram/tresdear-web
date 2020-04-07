@@ -4,43 +4,7 @@ export default {
     mode: 'universal',
 
     router: {
-        // scrollBehavior: function (to, from, savedPosition) {
-        //     if (savedPosition) {
-        //         return savedPosition;
-        //     } else {
-        //         return { x: 0, y: 0 }
-        //     }
-        // }
-        // scrollBehavior: async (to, from, savedPosition) => {
-        //     console.log('do function');
-        //     if (savedPosition) {
-        //         return savedPosition
-        //     }
-        //
-        //
-        //     const findEl = async (hash, x) => {
-        //         return document.querySelector(hash) ||
-        //         new Promise((resolve, reject) => {
-        //             if (x > 50) {
-        //                 return resolve()
-        //             }
-        //             setTimeout(() => { resolve(findEl(hash, ++x || 1)) }, 100)
-        //         })
-        //     }
-        //
-        //     if (to.hash) {
-        //         let el = await findEl(to.hash)
-        //         if ('scrollBehavior' in document.documentElement.style) {
-        //             console.log('if');
-        //             return window.scrollTo({ top: el.offsetTop, behavior: 'smooth' })
-        //         } else {
-        //             console.log('else');
-        //             return window.scrollTo(0, el.offsetTop)
-        //         }
-        //     }
-        //     return { x: 0, y: 0 }
-        //
-        // }
+
     },
 
     /*
@@ -126,10 +90,8 @@ export default {
     ** Nuxt.js modules
     */
     modules: [
-        // Doc: https://axios.nuxtjs.org/usage
         '@nuxtjs/axios',
         '@nuxtjs/recaptcha',
-        // Doc: https://bootstrap-vue.js.org/docs/
         'bootstrap-vue/nuxt',
         [
           'nuxt-fontawesome', {
@@ -144,7 +106,8 @@ export default {
                     }
                ]
             }
-        ]
+        ],
+      '@nuxtjs/device',
     ],
 
     recaptcha: {
