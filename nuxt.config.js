@@ -24,7 +24,7 @@ export default {
             { name: 'og:description', content: pkg.description },
             { name: 'og:type', content: 'website' },
             { name: 'og:url', content: pkg.baseUrl },
-            { name: 'og:image', content: pkg.baseUrl + 'img/thumb.jpg' },
+            { name: 'og:image', content: pkg.baseUrl + '/img/favicons/favicon-96x96.png' },
             // Twitter Card
             { name: 'twitter:card', content: 'summary' },
             { name: 'twitter:site', content: '@nuxt_js' },
