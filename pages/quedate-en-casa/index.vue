@@ -174,7 +174,7 @@
       return {
         medias: [
           {
-            full_url: '/img/breadcrumbs/stay-home.jpg'
+            full_url: '/img/breadcrumbs/stay-home.png'
           },
         ]
       }
