@@ -1,8 +1,8 @@
 <template>
   <div>
     <breadcrumb
-      title="¿Confinados?"
-      description="¡Sí, pero nos vamos de viaje!"
+      title=" "
+      description=""
       :medias="medias"
       :options="{
                   flickity: true,
@@ -15,9 +15,9 @@
 
       <b-row class="m-4">
         <b-col cols="12">
-<!--          <p class="font-p text-center m-4">-->
-<!--            <span style="font-size:26px;font-family:Montserrat, sans-serif;"><b>¿Confinados?</b><br/>¡Sí, pero nos vamos de viaje!</span>-->
-<!--          </p>-->
+          <p class="font-p text-center m-4">
+            <span style="font-size:26px;font-family:Montserrat, sans-serif;"><b>¿Confinados?</b><br/>¡Sí, pero nos vamos de viaje!</span>
+          </p>
           <p class="font-p text-center m-5">
             <span
             style="font-size:20px;font-family:Montserrat, sans-serif;">Hemos preparado una selección de recorridos de alrededor del mundo.<br/>Debajo de cada uno indicamos lo que nos parece más destacado.<br/>Encuentra contenido adicional en las etiquetas.
