@@ -20,7 +20,7 @@
           </p>
           <p class="font-p text-center mx-1 my-3">
             <span
-            style="font-size:20px;font-family:Montserrat, sans-serif;">Hemos preparado una selección de recorridos de alrededor del mundo.<br/>Debajo de cada uno indicamos lo que nos parece más destacado.<br/>Encuentra contenido adicional en las etiquetas.
+            style="font-size:20px;font-family:Montserrat, sans-serif;">Hemos preparado una selección de recorridos de alrededor del mundo.<br/>Encuentra contenido adicional en las etiquetas.
             </span>
           </p>
         </b-col>
