@@ -11,7 +11,7 @@
     >
 
     </breadcrumb>
-    <b-container fluid="lg">
+    <b-container fluid>
 
       <b-row class="my-4">
         <b-col cols="12">
