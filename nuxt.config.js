@@ -24,7 +24,7 @@ export default {
             { property: 'og:description', content: pkg.description },
             { property: 'og:type', content: 'website' },
             { property: 'og:url', content: pkg.baseUrl },
-            { property: 'og:image', content: pkg.baseUrl + '/img/favicons/favicon-96x96.png' },
+            { hid:'og-image', property: 'og:image', content: pkg.baseUrl + '/img/favicons/favicon-96x96.png' },
 
             // Twitter Card
             { name: 'twitter:card', content: 'summary' },
