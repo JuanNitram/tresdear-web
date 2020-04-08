@@ -20,11 +20,12 @@ export default {
             { name: 'google-site-verification', content:'EUO-I0obB7VH78GV_MYRUcumROC89nNAbXOTgy_GgKc' },
 
             // Open Graph
-            { name: 'og:title', content: pkg.title },
-            { name: 'og:description', content: pkg.description },
-            { name: 'og:type', content: 'website' },
-            { name: 'og:url', content: pkg.baseUrl },
-            { name: 'og:image', itemprop: 'image',content: pkg.baseUrl + '/img/favicons/favicon-96x96.png' },
+            { property: 'og:title', content: pkg.title },
+            { property: 'og:description', content: pkg.description },
+            { property: 'og:type', content: 'website' },
+            { property: 'og:url', content: pkg.baseUrl },
+            { property: 'og:image', content: pkg.baseUrl + '/img/favicons/favicon-96x96.png' },
+
             // Twitter Card
             { name: 'twitter:card', content: 'summary' },
             { name: 'twitter:site', content: '@nuxt_js' },
