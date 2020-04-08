@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="fade-in">
     <breadcrumb
       title=" "
       description=""
