@@ -30,7 +30,7 @@ export default {
 
             // Twitter Card
             { name: 'twitter:card', content: 'summary' },
-            { name: 'twitter:site', content: pkg.baseUrl },
+            { name: 'twitter:site', content: '@tresdear' },
             { name: 'twitter:title', content: pkg.title },
             { name: 'twitter:description', content: pkg.description },
             { name: 'twitter:image', content: pkg.baseUrl + '/img/favicons/favicon.jpg' },
