@@ -133,5 +133,15 @@ export default {
     },
     env: {
       API_URL: 'https://api.tresdear.es/api/page/',
+    },
+
+    hooks: {
+      'generate:page': (page) => {
+        page.html = page.html.replace(/ data-n-head="true"/g, '');
+      },
+      'render:route': (url, result) => {
+        // console.log(result.html);
+        result.html = result.html.replace(/ data-n-head="true"/g, '');
+      }
     }
 }
