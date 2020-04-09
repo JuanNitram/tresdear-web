@@ -138,10 +138,12 @@ export default {
     hooks: {
       'generate:page': (page) => {
         page.html = page.html.replace(/ data-n-head="true"/g, '');
+        page.html = page.html.replace(/ data-n-head="ssr"/g, '');
       },
       'render:route': (url, result) => {
         // console.log(result.html);
         result.html = result.html.replace(/ data-n-head="true"/g, '');
+        result.html = result.html.replace(/ data-n-head="ssr"/g, '');
       }
     }
 }
