@@ -24,8 +24,8 @@ export default {
             { property: 'og:description', content: pkg.description },
             { property: 'og:type', content: 'website' },
             { property: 'og:url', content: pkg.baseUrl },
-            { property: 'og:image', content: pkg.baseUrl + '/img/favicons/favicon.jpg' },
-            { property: 'og:image:secure_url', content: pkg.baseUrl + '/img/favicons/favicon.jpg' },
+            { property: 'og:image', content: 'https://lightit.sfo2.cdn.digitaloceanspaces.com/AgroTrabajo/Assets/agro-og-image2.jpg' },
+            { property: 'og:image:secure_url', content: 'https://lightit.sfo2.cdn.digitaloceanspaces.com/AgroTrabajo/Assets/agro-og-image2.jpg' },
             { property: 'og:image:type', content: 'image/jpeg' },
 
             // Twitter Card
