@@ -23,6 +23,14 @@
               <div class="credits-txt">
                   <span>Tresdear © 2019 - Todos los derechos reservados</span>
               </div>
+              <div class="sideral-branding">
+                        <span>
+                            Desarrollado por
+                        </span>
+                <a href="https://sideraldev.com">
+                  <img src="~/static/img/sideral/sideral-logo.png" alt="">
+                </a>
+              </div>
         </div>
     </footer>
 </template>
