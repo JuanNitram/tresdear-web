@@ -1,5 +1,5 @@
 <template>
-    <div id="aboutUs" class="pt-3 pt-sm-3 pt-md-4 pt-lg-5 pt-xl-5">
+    <div id="aboutUs" class="pt-3 pt-sm-3 pt-md-4 pt-lg-5 pt-xl-5" data-aos="fade-up">
         <b-container fluid  class="pt-3 pt-sm-3 pt-md-4 pt-lg-5 pt-xl-5">
             <!-- <b-row>
                 <b-col>

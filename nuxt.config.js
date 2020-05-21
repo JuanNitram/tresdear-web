@@ -84,6 +84,7 @@ export default {
         {src: '~/plugins/packery', ssr: false},
         {src: '~plugins/vee-validate.js', ssr: true},
         {src: '~plugins/google/googleAnalytics', ssr: false},
+        { src: '~/plugins/Aos.js', mode: 'client' },
         '~/plugins/vueScrollTo',
         '~/plugins/quill-delta-to-html',
         '~/plugins/functions',

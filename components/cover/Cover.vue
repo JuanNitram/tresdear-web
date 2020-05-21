@@ -1,5 +1,5 @@
 <template>
-    <div id="cover">
+    <div id="cover" data-aos="fade-up">
         <Preloader :size="20" :color="'#e4b013'"></Preloader>
         <transition name="fade">
           <div id="flickity-slider" class="hidden" style="min-height: 80vh">

@@ -3,7 +3,7 @@
         <b-container fluid>
             <b-row>
                 <b-col>
-                    <div class="section-title">
+                    <div class="section-title" data-aos="fade-up">
                         <h2>Precios</h2>
                         <div class="guard">
                             <img src="~/static/img/guard.png" alt="">
@@ -15,7 +15,7 @@
             </b-row>
             <b-row>
                 <b-col cols="12">
-                    <div class="plans-ls pl-3 pr-3 pl-sm-4 pr-sm-4 pl-md-5 pr-md-5 pl-lg-5 pr-lg-5 pl-xl-5 pr-xl-5">
+                    <div class="plans-ls pl-3 pr-3 pl-sm-4 pr-sm-4 pl-md-5 pr-md-5 pl-lg-5 pr-lg-5 pl-xl-5 pr-xl-5" data-aos="fade-up">
                         <no-ssr>
                             <flickity ref="flickity_plans" :options="plans_flickityOptions" :class="{un_flickity: plans_flickityStatus == false}">
                                 <planItem

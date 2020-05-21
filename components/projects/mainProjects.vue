@@ -3,7 +3,7 @@
         <b-container>
             <b-row>
                 <b-col>
-                    <div class="section-title">
+                    <div class="section-title" data-aos="fade-up">
                         <h2>Sectores</h2>
                         <div class="guard">
                             <img src="~/static/img/guard.png" alt="">
@@ -12,12 +12,15 @@
                 </b-col>
             </b-row>
         </b-container>
-      <div v-if="$device.isMobile === true" id="flickity-carousel" class="projects-ls">
-        <projectItem v-for="project in projects" :key="project.id" v-bind:project="project" />
-      </div>
-      <div v-else id="packery-grid" class="projects-ls">
-          <projectItem v-for="project in projects" :key="project.id" v-bind:project="project" />
-      </div>
+        <div data-aos="fade-up">
+          <div v-if="$device.isMobile === true" id="flickity-carousel" class="projects-ls" >
+            <projectItem v-for="project in projects" :key="project.id" v-bind:project="project" />
+          </div>
+          <div v-else id="packery-grid" class="projects-ls">
+              <projectItem v-for="project in projects" :key="project.id" v-bind:project="project" />
+          </div>
+        </div>
+      
     </div>
 </template>
 

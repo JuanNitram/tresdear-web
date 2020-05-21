@@ -1,5 +1,5 @@
 <template>
-    <div id="services" class="pt-3 pt-sm-3 pt-md-4 pt-lg-5 pt-xl-5 pb-3 pb-sm-3 pb-md-4 pb-lg-5 pb-xl-5">
+    <div id="services" class="pt-3 pt-sm-3 pt-md-4 pt-lg-5 pt-xl-5 pb-3 pb-sm-3 pb-md-4 pb-lg-5 pb-xl-5" data-aos="fade-up">
         <b-container>
             <b-row>
                 <b-col>

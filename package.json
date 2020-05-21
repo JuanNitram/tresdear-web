@@ -21,6 +21,7 @@
     "@nuxtjs/axios": "^5.5.4",
     "@nuxtjs/device": "^1.2.7",
     "@nuxtjs/recaptcha": "^0.5.3",
+    "aos": "^2.3.4",
     "bootstrap": "^4.1.3",
     "bootstrap-vue": "^2.0.0-rc.27",
     "cross-env": "^5.2.0",

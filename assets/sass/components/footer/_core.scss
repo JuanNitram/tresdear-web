@@ -177,7 +177,7 @@
         span {
             color: darken($white, 30%);
             font-family: $font;
-            font-size: .8rem;
+            font-size: 11px;
             margin-right: 5px;
 
             @media screen and(max-width: 576px) {
@@ -196,7 +196,7 @@
         }
 
         .sideral-branding {
-            height: 35px;
+            height: 15px;
             width: auto;
 
             @media screen and(max-width: 768px) {

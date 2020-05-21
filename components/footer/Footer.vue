@@ -27,7 +27,7 @@
                         <span>
                             Desarrollado por
                         </span>
-                <a href="https://sideraldev.com">
+                <a href="#">
                   <img src="~/static/img/sideral/sideral-logo.png" alt="">
                 </a>
               </div>
