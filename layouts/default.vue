@@ -16,9 +16,5 @@
             Navbar,
             Footer
         },
-
-        mounted() {
-            
-        }
     }
 </script>
