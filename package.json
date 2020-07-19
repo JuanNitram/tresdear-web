@@ -27,7 +27,7 @@
     "cross-env": "^5.2.0",
     "flickity-imagesloaded": "^2.0.0",
     "imagesloaded": "^4.1.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "nuxt": "^2.8.1",
     "nuxt-fontawesome": "^0.4.0",
     "packery": "^2.1.2",
